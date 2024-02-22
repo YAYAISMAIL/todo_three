@@ -30,7 +30,7 @@ class _SetDropDownState extends State<SetDropDown> {
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(widget.dropDownInit),
+                Text(widget.dropDownInit, style: Theme.of(context).textTheme.bodySmall),
                 const Icon(Icons.arrow_drop_down)
               ]),
         ),

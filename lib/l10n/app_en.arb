@@ -1,0 +1,12 @@
+{
+   "todo_screen_title": "ToDo List",
+   "setting_screen_title": "Settings",
+   "nav_btn_0": "My Tasks",
+   "nav_btn_1": "Settings",
+   "language": "Languages",
+   "english": "English",
+   "arabic": "العربية",
+   "app_mode": "App Mode",
+   "light_mode": "Light Mode",
+   "dark_mode": "Dark Mode"
+}

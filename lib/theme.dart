@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MyTheme {
-
   //Fixed Color
   static const Color white = Colors.white;
   static const Color black = Colors.black;
+  static const Color yellow = Color(0xfff0c808);
+  static const Color lightblue = Color(0xff5D9CEC);
 
   //Start:
   //Light Mode Color Info-----------------------------------------------------------
@@ -50,6 +51,8 @@ class MyTheme {
   //------------------------DarkMode-----Ending---------------------------------------
   //End-------------------------------------------------------------------------------
 
+  //---------------------------------Start UI Style --------------------------------------------------
+
   //Start:
   //LightMode ThemeData:--------------------------------------------------------------
   static ThemeData myThemeLightMod = ThemeData(
@@ -71,6 +74,14 @@ class MyTheme {
     //Floating ActionButton
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: floatingActionbtnColorLightMode,
+    ),
+
+    //  TextTheme:-
+    textTheme: const TextTheme(
+      bodyMedium:
+          TextStyle(fontSize: 14, color: black, fontWeight: FontWeight.bold),
+      bodySmall: TextStyle(
+          fontSize: 14, color: lightblue, fontWeight: FontWeight.w400),
     ),
   );
   //End------------------------------------------------------------------------------
@@ -96,6 +107,14 @@ class MyTheme {
     //Floating ActionButton
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: floatingActionbtnColorDarkMode,
+    ),
+
+    //  TextTheme:-
+    textTheme: const TextTheme(
+      bodyMedium:
+          TextStyle(fontSize: 14, color: white, fontWeight: FontWeight.bold),
+      bodySmall:
+          TextStyle(fontSize: 14, color: yellow, fontWeight: FontWeight.w400),
     ),
   );
   //End------------------------------------------------------------------------------

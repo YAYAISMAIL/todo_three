@@ -1,16 +1,15 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:todo_three/Settings_Package/set_dropdown.dart';
 import 'package:todo_three/theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingScreen extends StatelessWidget {
-  static const String tilteOfScreen = 'Settings';
-
-  SettingScreen({super.key});
+  const SettingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String tilteOfScreen = AppLocalizations.of(context)!.setting_screen_title;
+
     return Container(
       color: MyTheme.bodyPrimayColorLightMode,
       padding: EdgeInsets.symmetric(
@@ -20,13 +19,14 @@ class SettingScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Text("Language"),
+          Text(AppLocalizations.of(context)!.language,
+              style: Theme.of(context).textTheme.bodyMedium),
           SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           SetDropDown(dropDownInit: 'English'),
           SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-          const Text("App-Mode"),
+          Text(AppLocalizations.of(context)!.app_mode),
           SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-          SetDropDown(dropDownInit: 'Light Mode',),
+          SetDropDown(dropDownInit: 'Light Mode'),
         ],
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_three/Settings_Package/Setting_Screen.dart';
 import 'package:todo_three/ToDO_Package/todo_screen.dart';
 import 'package:todo_three/theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routesName = 'HomeScreen';
@@ -13,11 +14,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static String tilteOfScreen = 'To Do List';
   int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    String tilteOfScreen = currentIndex == 0
+        ? AppLocalizations.of(context)!.todo_screen_title
+        : AppLocalizations.of(context)!.setting_screen_title;
+    ;
     return Scaffold(
       appBar: AppBar(
         title: Text(tilteOfScreen),
@@ -31,28 +35,17 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex: currentIndex,
             onTap: (value) {
               currentIndex = value;
-              switch (value) {
-                case 0:
-                  tilteOfScreen = ToDoScreen.tilteOfScreen;
-                  break;
-                case 1:
-                  tilteOfScreen = SettingScreen.tilteOfScreen;
-                  break;
-                default:
-                  tilteOfScreen = ToDoScreen.tilteOfScreen;
-                  break;
-              }
               setState(() {});
             },
-            items: const [
+            items: [
               BottomNavigationBarItem(
-                  icon: ImageIcon(
+                  icon: const ImageIcon(
                       AssetImage('assets/icons/Icon awesome-list.png')),
-                  label: 'TODO'),
+                  label: AppLocalizations.of(context)!.nav_btn_0),
               BottomNavigationBarItem(
-                  icon: ImageIcon(
+                  icon: const ImageIcon(
                       AssetImage('assets/icons/Icon feather-settings.png')),
-                  label: 'Settings'),
+                  label: AppLocalizations.of(context)!.nav_btn_1),
             ]),
       ),
       floatingActionButton: FloatingActionButton(
