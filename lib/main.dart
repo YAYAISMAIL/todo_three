@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routesName,
       routes: {
-        HomeScreen.routesName: (context) => const HomeScreen(),
+        HomeScreen.routesName: (context) => HomeScreen(),
       },
       theme: MyTheme.myThemeDarkMod,
     );
